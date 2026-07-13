@@ -6,31 +6,48 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
   activePage: 'home' | 'profile' | 'practice' | 'contact';
 }
 
-const { title, activePage } = Astro.props;
+const { title, description, activePage } = Astro.props;
 const withBase = createBasePath(import.meta.env.BASE_URL);
 
-const pageTitle = `${title} . Allison Hart . Oklahoma Attorney`;
-const description =
-  'Allison Hart is a unique attorney providing high-quality, efficient legal representation in all legal matters. The focus is to find creative solutions to the challenging problems presented by complex cases, including issues related to Divorce, Child Custody, Child Support Guidelines, Modifications, Victim’s Protective Orders, Foreclosures, DUI, Wills and Trusts, Personal injury, Expungement and other Criminal matters.';
+const siteUrl = Astro.site ?? new URL('https://connorbowlan.github.io');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const pageTitle = `${title} | Allison Hart, P.C. | Oklahoma City Attorney`;
+const pageDescription =
+  description ??
+  'Allison Hart provides experienced, practical legal representation in Oklahoma City, including family law, child custody, child support, DUI defense, wills, trusts, and civil matters.';
+const socialImageUrl = new URL(withBase('/images/skyline.jpg'), siteUrl).toString();
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content={pageDescription} />
     <meta
       name="keywords"
       content="attorney, legal, case, felony, divorce, misdemeanor, oklahoma county, logan county, lawyer, law, child support, paternity, modification, will, testament, oklahoma"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="1BA556BBE6309C2F830D503BA98E92C1" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Allison Hart, P.C." />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <title>{pageTitle}</title>
+    <link rel="canonical" href={canonicalUrl} />
 
     <link rel="apple-touch-icon" sizes="57x57" href={withBase('/images/favicons/apple-touch-icon-57x57.png')} />
     <link rel="apple-touch-icon" sizes="60x60" href={withBase('/images/favicons/apple-touch-icon-60x60.png')} />

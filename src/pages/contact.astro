@@ -2,33 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Contact" activePage="contact">
-  <div class="columns">
-    <div class="column-1">
-      <i class="fa fa-map-marker fa-2x h1"></i><h1>Map</h1>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12995.531761289427!2d-97.524262!3d35.48244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe66b4e4bdbbe6517!2sHart+Law+Firm!5e0!3m2!1sen!2sus!4v1433278822979"
-        width="250"
-        height="250"
-        style="border:0;"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Hart Law Firm map"
-      ></iframe>
-    </div>
-    <div class="column-2">
-      <i class="fa fa-info-circle fa-2x h1"></i><h1>Office Information</h1>
+<BaseLayout
+  title="Contact"
+  description="Contact Allison Hart, P.C. in Oklahoma City by phone or email to discuss family law, criminal defense, or other legal matters."
+  activePage="contact"
+>
+  <div class="content contact-intro">
+    <h1 class="heading-with-icon"><i class="fa fa-phone heading-icon" aria-hidden="true"></i><span>Contact</span></h1>
+    <p>If you need legal help, the fastest way to connect is by phone or direct email. This page is organized so you can quickly find our location, office contact details, and the best way to start your consultation.</p>
+  </div>
+
+  <div class="columns contact-grid">
+    <section class="column-1 contact-panel contact-panel-map">
+      <h1 class="heading-with-icon"><i class="fa fa-map-marker heading-icon" aria-hidden="true"></i><span>Map</span></h1>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12995.531761289427!2d-97.524262!3d35.48244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe66b4e4bdbbe6517!2sHart+Law+Firm!5e0!3m2!1sen!2sus!4v1433278822979"
+          class="map-embed"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Hart Law Firm map"
+        ></iframe>
+      </div>
+      <p class="map-note"><a class="contact-link-button" href="https://maps.google.com/?q=701+NW+13th+Street,+Oklahoma+City,+OK+73103" target="_blank" rel="noopener noreferrer">Open Directions in Google Maps</a></p>
+    </section>
+    <section class="column-2 contact-panel contact-panel-office">
+      <h1 class="heading-with-icon"><i class="fa fa-info-circle heading-icon" aria-hidden="true"></i><span>Office Information</span></h1>
       <h2 class="office-address">701 NW 13th Street<br />Oklahoma City, OK 73103</h2>
-      <ul>
-        <li><i class="fa fa-phone fa-lg"></i> Phone: <a href="tel:4053406340">(405) 340-6340</a></li>
-        <li><i class="fa fa-fax fa-lg"></i> Fax: (405) 604-9054</li>
-        <li><i class="fa fa-envelope-o fa-lg"></i> Email: <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a></li>
+      <ul class="contact-details">
+        <li><i class="fa fa-phone inline-icon" aria-hidden="true"></i> Phone: <a href="tel:4053406340">(405) 340-6340</a></li>
+        <li><i class="fa fa-fax inline-icon" aria-hidden="true"></i> Fax: (405) 604-9054</li>
+        <li><i class="fa fa-envelope inline-icon" aria-hidden="true"></i> Email: <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a></li>
       </ul>
-    </div>
-    <div class="column-3">
-      <i class="fa fa-clock-o fa-2x h1"></i><h1>Need to Reach Us Quickly?</h1>
-      <p>The contact form from the legacy site is intentionally omitted in this modern static version.</p>
-      <p class="contact-note">Please call or email using the details on this page, and we can start discussing your legal needs right away.</p>
-    </div>
+      <p class="office-service-area">Serving Oklahoma City and surrounding communities, including Edmond, Moore, Norman, Guthrie, Stillwater, and Shawnee.</p>
+    </section>
+    <section class="column-3 contact-panel contact-panel-quick">
+      <h1 class="heading-with-icon"><i class="fa fa-clock heading-icon" aria-hidden="true"></i><span>How to Start</span></h1>
+      <p class="contact-fast-note"><strong>Use the phone or email listed in Office Information, then include:</strong></p>
+      <ol class="contact-steps">
+        <li><span class="step-badge">1</span><span>A short summary of your legal matter and key dates.</span></li>
+        <li><span class="step-badge">2</span><span>The best number and time to reach you for follow-up.</span></li>
+        <li><span class="step-badge">3</span><span>Any upcoming court deadlines or urgent concerns.</span></li>
+      </ol>
+    </section>
   </div>
 </BaseLayout>

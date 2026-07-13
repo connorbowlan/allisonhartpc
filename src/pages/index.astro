@@ -5,16 +5,20 @@ import { createBasePath } from '../lib/paths';
 const withBase = createBasePath(import.meta.env.BASE_URL);
 ---
 
-<BaseLayout title="Home" activePage="home">
+<BaseLayout
+  title="Home"
+  description="Allison Hart, P.C. is an Oklahoma City law firm providing practical representation in family law, child custody, child support, criminal defense, and related civil matters."
+  activePage="home"
+>
   <div class="content">
     <div class="featured-press">
       <p class="featured-press-row">
-        <i class="fa fa-newspaper" aria-hidden="true"></i>
+        <i class="fa fa-newspaper featured-icon" aria-hidden="true"></i>
         <span class="featured-label">Featured</span>
         <a href="https://www.msn.com/en-us/news/other/top-lawyers-setting-new-precedents-in-the-legal-industry/ar-AA21VHjP" target="_blank" rel="noopener noreferrer">Top Lawyers Setting New Precedents in the Legal Industry</a>
       </p>
       <p class="featured-press-row">
-        <i class="fa fa-award" aria-hidden="true"></i>
+        <i class="fa fa-award featured-icon" aria-hidden="true"></i>
         <span class="featured-label">Recognition</span>
         <a href="https://www.expertise.com/ok/oklahoma-city/child-support-lawyers" target="_blank" rel="noopener noreferrer">Recognized among top child support lawyers in Oklahoma City</a>
       </p>
@@ -23,19 +27,19 @@ const withBase = createBasePath(import.meta.env.BASE_URL);
 
   <div class="columns">
     <div class="column-1">
-      <i class="fa fa-check-circle-o fa-2x h1"></i><h1>Boutique Law</h1>
+      <h1 class="heading-with-icon"><i class="fa fa-gavel heading-icon" aria-hidden="true"></i><span>Boutique Law</span></h1>
       <p>Allison Hart is a unique attorney providing high-quality, efficient legal representation in all legal matters. The focus is to find creative solutions to the challenging problems presented by complex cases, including issues related to Divorce, Child Custody, Child Support Guidelines, Modifications, Victim’s Protective Orders, Foreclosures, DUI, Wills and Trusts, Personal injury, Expungement and other Criminal matters. We believe it is vital to provide convenience to our clients and reduce the difficulty of the legal process through clear communication.</p>
     </div>
     <div class="column-2">
-      <i class="fa fa-check-circle-o fa-2x h1"></i><h1>A Winning Formula</h1>
+      <h1 class="heading-with-icon"><i class="fa fa-balance-scale heading-icon" aria-hidden="true"></i><span>A Winning Formula</span></h1>
       <p>The approach to each case is governed by the client's circumstances and needs. Some clients are best served by aggressive litigation; other clients benefit from negotiations based on thorough preparation and in-depth knowledge of their individual situations. Whatever approach is needed, every case is prepared in anticipation of a trial so that if necessary, we are ready for any issues to arise. This go-to team of experts include CPAs; psychiatrists; real estate appraisers; business valuation experts; private investigators; computer forensic experts; and more.</p>
     </div>
     <div class="column-3">
-      <i class="fa fa-check-circle-o fa-2x h1"></i><h1>Immediate Help</h1>
+      <h1 class="heading-with-icon"><i class="fa fa-phone heading-icon" aria-hidden="true"></i><span>Immediate Help</span></h1>
       <p>To schedule a consultation, please use one of the methods below:</p>
       <ul>
-        <li><i class="fa fa-phone fa-lg"></i> Phone: <a href="tel:4053406340">(405) 340-6340</a></li>
-        <li><i class="fa fa-envelope-o fa-lg"></i> Email: <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a></li>
+        <li><i class="fa fa-phone inline-icon" aria-hidden="true"></i> Phone: <a href="tel:4053406340">(405) 340-6340</a></li>
+        <li><i class="fa fa-envelope inline-icon" aria-hidden="true"></i> Email: <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a></li>
       </ul>
       <p>She serves the greater Oklahoma City area, including communities such as Edmond, Oklahoma City, Moore, Norman, El Reno, Guthrie, Stillwater and Shawnee. For a full list of services and areas of practice, visit the <a href={withBase('/practice')}>practice</a> page.</p>
     </div>
