@@ -132,7 +132,9 @@ const structuredDataItems = [attorneySchema, ...pageStructuredData];
   </head>
   <body>
     <SiteHeader activePage={activePage} />
-    <slot />
+    <main class="site-main">
+      <slot />
+    </main>
     <SiteFooter />
   </body>
 </html>
