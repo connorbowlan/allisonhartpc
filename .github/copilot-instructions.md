@@ -2,49 +2,58 @@
 
 ## Build, test, and lint commands
 
-This repository is a small PHP website without a package manager, build pipeline, or automated test suite.
-
-Use these commands for local validation:
+Primary app validation (Astro app at repository root):
 
 ```powershell
-# Run the site locally (document root is current-code/)
+# Install deps
+npm install
+
+# Run local dev server
+npm run dev
+
+# Build static output
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+Legacy reference site validation (`current-code/` only, when needed for parity checks):
+
+```powershell
+# Run legacy PHP site
 php -S localhost:8000 -t current-code
 
-# Lint all PHP files
+# Lint all legacy PHP files
 Get-ChildItem current-code -Recurse -Filter *.php | ForEach-Object { php -l $_.FullName }
-
-# Lint a single file (single-test equivalent)
-php -l current-code\contact.php
 ```
 
 ## High-level architecture
 
-- The deployed web root is `current-code/`; repository root is mainly a container for that site.
-- The site is a flat, page-oriented PHP app with one file per route:
-  - `index.php`, `profile.php`, `practice.php`, `contact.php`.
-- Shared fragments are included from `current-code\static\`:
-  - `meta.php` (SEO metadata, favicon tags, Font Awesome kit, viewport),
-  - `analytics.php` (Google Analytics script),
-  - `footer.php` (footer columns/links),
-  - `styles.css` (global layout/typography/responsive behavior).
-- `contact.php` contains both rendering and form handling in the same file:
-  - self-posting form (`action="contact.php"`),
-  - inline sanitization helper functions,
-  - CAPTCHA validation via `include_once $_SERVER['DOCUMENT_ROOT'] . '/securimage/securimage.php'`,
-  - email dispatch via `mail(...)`.
-- Static assets are served from:
-  - `current-code\images\` (including `images\favicons\`),
-  - `current-code\attached\` (PDFs),
-  - plus crawl metadata files (`robots.txt`, `sitemap.xml`).
+- The active site is an Astro static app rooted at repository root.
+- Main app surfaces:
+  - `src/layouts/BaseLayout.astro` for shared head/metadata shell
+  - `src/components/SiteHeader.astro` for nav + skyline hero
+  - `src/components/SiteFooter.astro` for minimal immediate-contact footer row
+  - `src/pages/index.astro`, `profile.astro`, `practice.astro`, `contact.astro`
+  - `src/styles/global.css` for global styling
+- `current-code/` remains as legacy PHP source-of-truth reference (not the deployed app).
+- GitHub Pages deploys static `dist/` via `.github/workflows/deploy-modern-site.yml`.
+
+## Contact form constraints and behavior
+
+- Hosting is GitHub Pages (static), so no server-side form handling runs in production.
+- Contact form intentionally uses a `mailto:` submission flow that opens the user email client with pre-filled fields.
+- Legacy `securimage` CAPTCHA and PHP `mail(...)` backend behavior are not used in Astro.
+- If true backend email sending is required later, move deployment to a platform with serverless/functions or add an external API endpoint.
 
 ## Key conventions in this codebase
 
-- Keep page URLs and internal links as explicit `.php` routes (see `sitemap.xml` and nav links).
-- Preserve the shared include pattern in page `<head>` and footer:
-  - `<?php include "static/analytics.php" ?>`,
-  - `<?php include "static/meta.php" ?>`,
-  - `<?php include "static/footer.php" ?>`.
-- Header/nav markup is duplicated per page, and the active nav state is set manually with `id="active"` on the current page link.
-- Layout is driven by `.columns` and `.column-1/.column-2/.column-3` from `static/styles.css`; follow these classes when adding or restructuring content blocks.
-- Contact-form status messaging relies on CSS classes `p.error` and `p.success`; keep those class names if changing form behavior.
-- `.htaccess` contains cPanel-managed PHP handler settings for `ea-php82`; keep that managed block intact.
+- Keep URLs as explicit page routes (`/`, `/profile`, `/practice`, `/contact`).
+- Keep base-path-safe links/assets using existing helpers/patterns (project site path: `/allisonhartpc`).
+- Preserve shared layout/component pattern; avoid duplicating shell markup across pages.
+- Keep nav structure stable:
+  - Main links: Home, Profile, Practice, Contact
+  - Utility action: Pay Online (styled as distinct aside action)
+- Footer should remain minimal (immediate contact row only: Call, Email, Pay Online).
+- Maintain icon consistency with currently supported Font Awesome classes already in use.
