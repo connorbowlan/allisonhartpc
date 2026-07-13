@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://allisonhartpc.com/sitemap-index.xml
+Sitemap: https://connorbowlan.github.io/allisonhartpc/sitemap-index.xml

@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const baseUrl = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${baseUrl}${path.replace(/^\/+/, '')}`;
 ---
 
 <BaseLayout title="Profile" activePage="profile">
   <div class="content">
-    <img class="profile-photo" src="/images/profile.png" alt="Picture of Allison Hart." />
+    <img class="profile-photo" src={withBase('/images/profile.png')} alt="Picture of Allison Hart." />
     <h1>Allison Hart, P.C.</h1>
     <div class="columns">
       <div class="column-1">

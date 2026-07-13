@@ -139,7 +139,9 @@ nav ul li a:hover {
 }
 
 #skyline {
-  background: url('/images/skyline.jpg') fixed;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   height: 20em;
   margin-top: 85px;

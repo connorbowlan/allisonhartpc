@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://allisonhartpc.com',
+  site: 'https://connorbowlan.github.io',
+  base: '/allisonhartpc',
   integrations: [sitemap()],
 });

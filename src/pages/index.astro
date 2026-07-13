@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const baseUrl = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${baseUrl}${path.replace(/^\/+/, '')}`;
 ---
 
 <BaseLayout title="Home" activePage="home">
@@ -19,7 +21,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li><i class="fa fa-phone fa-lg"></i> Phone: <a href="tel:4053406340">(405) 340-6340</a></li>
         <li><i class="fa fa-envelope-o fa-lg"></i> Email: <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a></li>
       </ul>
-      <p>She serves the greater Oklahoma City area, including communities such as Edmond, Oklahoma City, Moore, Norman, El Reno, Guthrie, Stillwater and Shawnee. For a full list of services and areas of practice, visit the <a href="/practice">practice</a> page.</p>
+      <p>She serves the greater Oklahoma City area, including communities such as Edmond, Oklahoma City, Moore, Norman, El Reno, Guthrie, Stillwater and Shawnee. For a full list of services and areas of practice, visit the <a href={withBase('/practice')}>practice</a> page.</p>
     </div>
   </div>
 
