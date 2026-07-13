@@ -21,6 +21,9 @@ const withBase = createBasePath(import.meta.env.BASE_URL);
           <li><a href={withBase('/profile')} class={activePage === 'profile' ? 'active' : undefined}>Profile</a></li>
           <li><a href={withBase('/practice')} class={activePage === 'practice' ? 'active' : undefined}>Practice</a></li>
           <li><a href={withBase('/contact')} class={activePage === 'contact' ? 'active' : undefined}>Contact</a></li>
+          <li class="nav-aside-link">
+            <a href="https://secure.lawpay.com/pages/allisonhart/operating/" target="_blank" rel="noopener noreferrer">Pay Online</a>
+          </li>
         </ul>
       </nav>
     </div>
