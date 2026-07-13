@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const baseUrl = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${baseUrl}${path.replace(/^\/+/, '')}`;
+const withBase = (path: string) => `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
 ---
 
 <BaseLayout title="Home" activePage="home">
