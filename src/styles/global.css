@@ -256,6 +256,11 @@ footer .column-3 {
 }
 
 @media only screen and (max-width: 768px) {
+  #top {
+    height: auto;
+    padding: 12px 0;
+  }
+
   .social {
     display: none;
   }
@@ -266,16 +271,63 @@ footer .column-3 {
     width: 100%;
   }
 
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    float: none;
+    gap: 8px 10px;
+    justify-content: center;
+  }
+
+  nav ul li {
+    float: none;
+  }
+
   nav ul li a {
-    margin: 0 5px 0 5px;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0;
+    padding: 6px 8px;
+  }
+
+  h1 {
+    font-size: 1.45em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  p,
+  ul li {
+    font-size: 1em;
+    line-height: 1.55;
   }
 
   #skyline a {
-    font-size: 3em;
+    font-size: 2.3em;
   }
 
   #skyline span.tagline {
-    font-size: 1.5em;
+    font-size: 1.2em;
+  }
+
+  #skyline {
+    height: 14em;
+    margin-top: 108px;
+  }
+
+  .columns,
+  .content {
+    width: 92%;
+  }
+
+  blockquote {
+    padding: 1.2em 1.2em 0 1.2em;
+  }
+
+  iframe {
+    max-width: 100%;
   }
 
   .column-1,
@@ -290,7 +342,7 @@ footer .column-3 {
   .award-wrap {
     float: none;
     margin: 0 auto 15px auto;
-    width: fit-content;
+    width: 200px;
   }
 
   footer .column-1,
