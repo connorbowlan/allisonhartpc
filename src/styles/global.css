@@ -25,6 +25,12 @@ i.h1 {
   margin-right: 10px;
 }
 
+.section-icon {
+  color: #524d85;
+  font-size: 0.85em;
+  margin-right: 8px;
+}
+
 blockquote {
   background: #fefefe;
   border-radius: 5px;
@@ -226,6 +232,10 @@ nav ul li a:hover {
   padding: 12px;
   text-align: center;
   width: 200px;
+}
+
+.award-fallback i {
+  margin-right: 8px;
 }
 
 .office-address {
