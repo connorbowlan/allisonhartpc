@@ -9,7 +9,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <div class="content contact-intro">
     <h1 class="heading-with-icon"><i class="fa fa-phone heading-icon" aria-hidden="true"></i><span>Contact</span></h1>
-    <p>If you need legal help, the fastest way to connect is by phone or direct email. This page is organized so you can quickly find our location, office contact details, and the best way to start your consultation.</p>
+    <p>If you need legal help, the fastest way to connect is by phone or direct email. You can use the map for directions and find all office details here.</p>
   </div>
 
   <div class="columns contact-grid">
@@ -37,14 +37,93 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </ul>
       <p class="office-service-area">Serving Oklahoma City and surrounding communities, including Edmond, Moore, Norman, Guthrie, Stillwater, and Shawnee.</p>
     </section>
-    <section class="column-3 contact-panel contact-panel-quick">
-      <h1 class="heading-with-icon"><i class="fa fa-clock heading-icon" aria-hidden="true"></i><span>How to Start</span></h1>
-      <p class="contact-fast-note"><strong>Use the phone or email listed in Office Information, then include:</strong></p>
-      <ol class="contact-steps">
-        <li><span class="step-badge">1</span><span>A short summary of your legal matter and key dates.</span></li>
-        <li><span class="step-badge">2</span><span>The best number and time to reach you for follow-up.</span></li>
-        <li><span class="step-badge">3</span><span>Any upcoming court deadlines or urgent concerns.</span></li>
-      </ol>
-    </section>
   </div>
+
+  <section class="content contact-form-section">
+    <h1 class="heading-with-icon"><i class="fa fa-envelope heading-icon" aria-hidden="true"></i><span>Send a Message</span></h1>
+    <p class="contact-form-intro">Use this form to prepare your message quickly. When you submit, your email app opens with all details pre-filled for review.</p>
+    <form id="contact-form" class="contact-form" novalidate>
+      <p class="contact-form-meta"><span class="required">*</span> Required fields</p>
+      <div class="contact-form-grid">
+        <div class="contact-form-field">
+          <label for="firstName">First Name <span class="required">*</span></label>
+          <input id="firstName" name="firstName" type="text" maxlength="255" autocomplete="given-name" placeholder="First name" required />
+        </div>
+        <div class="contact-form-field">
+          <label for="lastName">Last Name <span class="required">*</span></label>
+          <input id="lastName" name="lastName" type="text" maxlength="255" autocomplete="family-name" placeholder="Last name" required />
+        </div>
+        <div class="contact-form-field">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input id="email" name="email" type="email" maxlength="255" autocomplete="email" placeholder="you@example.com" required />
+        </div>
+        <div class="contact-form-field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" maxlength="14" inputmode="tel" placeholder="(405) 123-4567" autocomplete="tel" />
+        </div>
+        <div class="contact-form-field">
+          <label for="referral">How did you find us?</label>
+          <input id="referral" name="referral" type="text" maxlength="255" placeholder="Referral, search, etc." />
+        </div>
+        <div class="contact-form-field">
+          <label for="county">What county has jurisdiction on your case?</label>
+          <input id="county" name="county" type="text" maxlength="255" placeholder="e.g., Oklahoma County" />
+        </div>
+        <div class="contact-form-field contact-form-field-full">
+          <label for="message">Briefly describe how we can help <span class="required">*</span></label>
+          <textarea id="message" name="message" minlength="10" placeholder="Share a brief summary of your legal matter." required></textarea>
+        </div>
+      </div>
+      <div class="contact-form-actions">
+        <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i><span>Send Message</span></button>
+      </div>
+      <p id="contact-form-status" class="contact-form-status" aria-live="polite"></p>
+      <noscript>
+        <p class="contact-form-status">JavaScript is required to open the email draft. You can email us directly at <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a>.</p>
+      </noscript>
+    </form>
+  </section>
+
+  <script is:inline>
+    const contactForm = document.getElementById('contact-form');
+    const statusEl = document.getElementById('contact-form-status');
+    if (contactForm instanceof HTMLFormElement && statusEl instanceof HTMLElement) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        statusEl.classList.remove('is-error', 'is-success');
+        if (!contactForm.reportValidity()) {
+          statusEl.classList.add('is-error');
+          statusEl.textContent = 'Please fill in the required fields.';
+          return;
+        }
+
+        const formData = new FormData(contactForm);
+        const firstName = String(formData.get('firstName') ?? '').trim();
+        const lastName = String(formData.get('lastName') ?? '').trim();
+        const email = String(formData.get('email') ?? '').trim();
+        const phone = String(formData.get('phone') ?? '').trim();
+        const referral = String(formData.get('referral') ?? '').trim();
+        const county = String(formData.get('county') ?? '').trim();
+        const message = String(formData.get('message') ?? '').trim();
+
+        const bodyLines = [
+          `First Name: ${firstName}`,
+          `Last Name: ${lastName}`,
+          `Email: ${email}`,
+          `Phone: ${phone || 'Not provided'}`,
+          `Referral: ${referral || 'Not provided'}`,
+          `County: ${county || 'Not provided'}`,
+          '',
+          'Message:',
+          message,
+        ];
+        const subject = `Website Contact - ${firstName} ${lastName}`.trim();
+        const mailtoLink = `mailto:allison@hartlawfirm.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+        statusEl.classList.add('is-success');
+        statusEl.textContent = 'Opening your email app with this message draft...';
+        window.location.href = mailtoLink;
+      });
+    }
+  </script>
 </BaseLayout>
