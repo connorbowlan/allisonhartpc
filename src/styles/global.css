@@ -24,8 +24,14 @@ h2 {
 }
 
 i.h1 {
-  float: left;
+  display: inline-flex;
   margin-right: 10px;
+  vertical-align: middle;
+}
+
+i.h1 + h1 {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .section-icon {
@@ -82,8 +88,9 @@ a:hover {
 }
 
 img.profile-photo {
-  float: left;
-  margin: 0 25px 25px 0;
+  display: block;
+  margin: 0;
+  max-width: 100%;
 }
 
 ul {
@@ -127,7 +134,6 @@ ul li {
 }
 
 nav {
-  float: none;
   width: 100%;
 }
 
@@ -135,14 +141,12 @@ nav ul {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  float: none;
   gap: 8px 16px;
   justify-content: flex-end;
   margin: 0;
 }
 
 nav ul li {
-  float: none;
   list-style: none;
 }
 
@@ -198,30 +202,18 @@ nav ul li a:hover {
 }
 
 .columns {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 25px auto;
   width: 90%;
-}
-
-.columns:after {
-  clear: both;
-  content: '';
-  display: block;
 }
 
 .column-1,
 .column-2,
 .column-3 {
-  float: left;
   position: relative;
-  width: 30%;
-}
-
-.column-1 {
-  padding-right: 5%;
-}
-
-.column-3 {
-  padding-left: 5%;
+  width: 100%;
 }
 
 .content {
@@ -230,8 +222,17 @@ nav ul li a:hover {
 }
 
 .award-wrap {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
   margin: 0 5% 15px 15px;
+}
+
+.profile-intro {
+  align-items: start;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(180px, 280px) 1fr;
+  margin-bottom: 18px;
 }
 
 .award-link {
@@ -334,7 +335,6 @@ footer .column-3 {
   }
 
   nav {
-    float: none;
     margin: auto;
     width: 100%;
   }
@@ -342,13 +342,8 @@ footer .column-3 {
   nav ul {
     display: flex;
     flex-wrap: wrap;
-    float: none;
     gap: 8px 10px;
     justify-content: center;
-  }
-
-  nav ul li {
-    float: none;
   }
 
   nav ul li a {
@@ -390,6 +385,11 @@ footer .column-3 {
     width: 92%;
   }
 
+  .columns {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+
   .featured-press {
     font-size: 0.94em;
     padding: 8px 10px;
@@ -419,16 +419,19 @@ footer .column-3 {
   .column-1,
   .column-2,
   .column-3 {
-    float: none;
     margin: 0 0 25px 0;
     padding: 0;
     width: 100%;
   }
 
   .award-wrap {
-    float: none;
+    justify-content: center;
     margin: 0 auto 15px auto;
     width: 200px;
+  }
+
+  .profile-intro {
+    grid-template-columns: 1fr;
   }
 
   footer .column-1,
