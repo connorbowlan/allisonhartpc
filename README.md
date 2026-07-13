@@ -11,6 +11,8 @@ npm install
 npm run dev
 ```
 
+Dev server URL: `http://localhost:3000`
+
 ## Build and preview
 
 ```sh

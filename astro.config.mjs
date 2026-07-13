@@ -6,5 +6,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://connorbowlan.github.io',
   base: '/allisonhartpc',
+  server: {
+    port: 3000,
+  },
   integrations: [sitemap()],
 });
