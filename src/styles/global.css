@@ -269,6 +269,42 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
+.featured-press {
+  background: linear-gradient(135deg, #fff, #f7f9fd);
+  border: 1px solid #d9e1ef;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  color: #2b354b;
+  font: 1em Arial;
+  margin-bottom: 20px;
+  padding: 10px 12px;
+}
+
+.featured-press-row {
+  align-items: center;
+  border-radius: 7px;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 10px;
+}
+
+.featured-press-row + .featured-press-row {
+  border-top: 1px solid #e2e7f2;
+}
+
+.featured-press-row i {
+  color: #4d5d8d;
+  font-size: 1em;
+  width: 16px;
+}
+
+.featured-label {
+  color: #3f4f77;
+  font-weight: 700;
+  min-width: 96px;
+}
+
 footer {
   background: #333;
   margin-top: 50px;
@@ -352,6 +388,22 @@ footer .column-3 {
   .columns,
   .content {
     width: 92%;
+  }
+
+  .featured-press {
+    font-size: 0.94em;
+    padding: 8px 10px;
+  }
+
+  .featured-press-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .featured-label {
+    min-width: auto;
   }
 
   blockquote {

@@ -6,6 +6,21 @@ const withBase = createBasePath(import.meta.env.BASE_URL);
 ---
 
 <BaseLayout title="Home" activePage="home">
+  <div class="content">
+    <div class="featured-press">
+      <p class="featured-press-row">
+        <i class="fa fa-newspaper" aria-hidden="true"></i>
+        <span class="featured-label">Featured</span>
+        <a href="https://www.msn.com/en-us/news/other/top-lawyers-setting-new-precedents-in-the-legal-industry/ar-AA21VHjP" target="_blank" rel="noopener noreferrer">Top Lawyers Setting New Precedents in the Legal Industry</a>
+      </p>
+      <p class="featured-press-row">
+        <i class="fa fa-award" aria-hidden="true"></i>
+        <span class="featured-label">Recognition</span>
+        <a href="https://www.expertise.com/ok/oklahoma-city/child-support-lawyers" target="_blank" rel="noopener noreferrer">Recognized among top child support lawyers in Oklahoma City</a>
+      </p>
+    </div>
+  </div>
+
   <div class="columns">
     <div class="column-1">
       <i class="fa fa-check-circle-o fa-2x h1"></i><h1>Boutique Law</h1>
@@ -24,12 +39,6 @@ const withBase = createBasePath(import.meta.env.BASE_URL);
       </ul>
       <p>She serves the greater Oklahoma City area, including communities such as Edmond, Oklahoma City, Moore, Norman, El Reno, Guthrie, Stillwater and Shawnee. For a full list of services and areas of practice, visit the <a href={withBase('/practice')}>practice</a> page.</p>
     </div>
-  </div>
-
-  <div class="award-wrap">
-    <a class="award-link" href="https://www.expertise.com/ok/oklahoma-city/child-support-lawyers" target="_blank" rel="noopener noreferrer">
-      <span class="award-fallback"><i class="fa fa-trophy"></i> Recognized among top child support lawyers in Oklahoma City</span>
-    </a>
   </div>
 
   <div class="content">
