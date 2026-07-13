@@ -1,0 +1,29 @@
+---
+interface Props {
+  activePage: 'home' | 'profile' | 'practice' | 'contact';
+}
+
+const { activePage } = Astro.props;
+---
+
+<header>
+  <div id="top">
+    <div id="top-center">
+      <div class="social">
+        <br />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/" class={activePage === 'home' ? 'active' : undefined}>Home</a></li>
+          <li><a href="/profile" class={activePage === 'profile' ? 'active' : undefined}>Profile</a></li>
+          <li><a href="/practice" class={activePage === 'practice' ? 'active' : undefined}>Practice</a></li>
+          <li><a href="/contact" class={activePage === 'contact' ? 'active' : undefined}>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div id="skyline">
+    <a href="/">Allison Hart</a>
+    <span class="tagline">Attorney at Law</span>
+  </div>
+</header>

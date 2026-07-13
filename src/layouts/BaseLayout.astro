@@ -1,0 +1,74 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  activePage: 'home' | 'profile' | 'practice' | 'contact';
+}
+
+const { title, activePage } = Astro.props;
+
+const pageTitle = `${title} . Allison Hart . Oklahoma Attorney`;
+const description =
+  'Allison Hart is a unique attorney providing high-quality, efficient legal representation in all legal matters. The focus is to find creative solutions to the challenging problems presented by complex cases, including issues related to Divorce, Child Custody, Child Support Guidelines, Modifications, Victim’s Protective Orders, Foreclosures, DUI, Wills and Trusts, Personal injury, Expungement and other Criminal matters.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="attorney, legal, case, felony, divorce, misdemeanor, oklahoma county, logan county, lawyer, law, child support, paternity, modification, will, testament, oklahoma"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msvalidate.01" content="1BA556BBE6309C2F830D503BA98E92C1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="/images/favicons/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/images/favicons/browserconfig.xml" />
+
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <script is:inline>
+      window.ga =
+        window.ga ||
+        function () {
+          // @ts-ignore legacy GA queue
+          (ga.q = ga.q || []).push(arguments);
+        };
+      // @ts-ignore
+      ga.l = +new Date();
+      // @ts-ignore
+      ga('create', 'UA-63671816-1', 'auto');
+      // @ts-ignore
+      ga('send', 'pageview');
+    </script>
+    <script src="https://kit.fontawesome.com/c859dfc8f4.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <SiteHeader activePage={activePage} />
+    <slot />
+    <SiteFooter />
+  </body>
+</html>

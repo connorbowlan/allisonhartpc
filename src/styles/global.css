@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+h1 {
+  color: #524d85;
+  font: 1.7em Helvetica Neue, Arial;
+  margin: 0 0 15px 0;
+}
+
+h2 {
+  color: #9b1d17;
+  font: 1.4em Helvetica Neue, Arial;
+  margin: 0 0 15px 0;
+}
+
+i.h1 {
+  float: left;
+  margin-right: 10px;
+}
+
+blockquote {
+  background: #fefefe;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 #ccc;
+  margin-bottom: 15px;
+  padding: 2em 2em 0 2em;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote:after {
+  color: #ccc;
+  font-size: 4em;
+  margin-left: 0.25em;
+  vertical-align: -0.4em;
+  content: close-quote;
+}
+
+blockquote p {
+  display: inline;
+  font: italic 1.2em Georgia;
+}
+
+p {
+  color: #000;
+  font: 0.9em Arial;
+  line-height: 1.4em;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #488bae;
+}
+
+img.profile-photo {
+  float: left;
+  margin: 0 25px 25px 0;
+}
+
+ul {
+  margin-bottom: 15px;
+}
+
+ul li {
+  color: #000;
+  font: 0.9em Arial;
+  display: block;
+  margin: 0 0 15px 0;
+}
+
+#top {
+  background: #fff;
+  height: 50px;
+  left: 0;
+  opacity: 0.98;
+  padding: 35px 0 0 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#top-center {
+  margin: auto;
+  width: 90%;
+}
+
+.social {
+  float: left;
+  width: 10%;
+}
+
+.social a {
+  font-size: 1em;
+}
+
+nav {
+  float: left;
+  width: 90%;
+}
+
+nav ul {
+  float: right;
+}
+
+nav ul li {
+  float: left;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #999;
+  font: 1em Georgia;
+  margin-right: 25px;
+}
+
+nav ul li a.active {
+  color: #000;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #000;
+}
+
+#skyline {
+  background: url('/images/skyline.jpg') fixed;
+  background-size: cover;
+  height: 20em;
+  margin-top: 85px;
+}
+
+#skyline a {
+  background: #000;
+  display: block;
+  color: #fff;
+  font: 5em Times New Roman;
+  opacity: 0.5;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#skyline span.tagline {
+  background: #000;
+  color: #fff;
+  display: block;
+  font: 2em Times New Roman;
+  opacity: 0.5;
+  padding-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.columns {
+  margin: 25px auto;
+  width: 90%;
+}
+
+.columns:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.column-1,
+.column-2,
+.column-3 {
+  float: left;
+  position: relative;
+  width: 30%;
+}
+
+.column-1 {
+  padding-right: 5%;
+}
+
+.column-3 {
+  padding-left: 5%;
+}
+
+.content {
+  margin: 25px auto;
+  width: 90%;
+}
+
+.award-wrap {
+  float: right;
+  margin: 0 5% 15px 15px;
+}
+
+.office-address {
+  color: #9b1d17;
+  font: 1.4em Helvetica Neue, Arial;
+}
+
+.contact-note {
+  margin-top: 10px;
+}
+
+footer {
+  background: #333;
+  margin-top: 50px;
+  padding: 7px 0 1px 0;
+}
+
+footer p {
+  color: #999;
+}
+
+footer .column-2 {
+  text-align: center;
+}
+
+footer .column-3 {
+  text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .social {
+    display: none;
+  }
+
+  nav {
+    float: none;
+    margin: auto;
+    width: 100%;
+  }
+
+  nav ul li a {
+    margin: 0 5px 0 5px;
+  }
+
+  #skyline a {
+    font-size: 3em;
+  }
+
+  #skyline span.tagline {
+    font-size: 1.5em;
+  }
+
+  .column-1,
+  .column-2,
+  .column-3 {
+    float: none;
+    margin: 0 0 25px 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .award-wrap {
+    float: none;
+    margin: 0 auto 15px auto;
+    width: fit-content;
+  }
+
+  footer .column-1,
+  footer .column-2,
+  footer .column-3 {
+    text-align: center;
+  }
+}

@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" activePage="contact">
+  <div class="columns">
+    <div class="column-1">
+      <i class="fa fa-map-marker fa-2x h1"></i><h1>Map</h1>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12995.531761289427!2d-97.524262!3d35.48244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe66b4e4bdbbe6517!2sHart+Law+Firm!5e0!3m2!1sen!2sus!4v1433278822979"
+        width="250"
+        height="250"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Hart Law Firm map"
+      ></iframe>
+    </div>
+    <div class="column-2">
+      <i class="fa fa-info-circle fa-2x h1"></i><h1>Office Information</h1>
+      <h2 class="office-address">701 NW 13th Street<br />Oklahoma City, OK 73103</h2>
+      <ul>
+        <li><i class="fa fa-phone fa-lg"></i> Phone: <a href="tel:4053406340">(405) 340-6340</a></li>
+        <li><i class="fa fa-fax fa-lg"></i> Fax: (405) 604-9054</li>
+        <li><i class="fa fa-envelope-o fa-lg"></i> Email: <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a></li>
+      </ul>
+    </div>
+    <div class="column-3">
+      <i class="fa fa-clock-o fa-2x h1"></i><h1>Need to Reach Us Quickly?</h1>
+      <p>The contact form from the legacy site is intentionally omitted in this modern static version.</p>
+      <p class="contact-note">Please call or email using the details on this page, and we can start discussing your legal needs right away.</p>
+    </div>
+  </div>
+</BaseLayout>
