@@ -8,9 +8,10 @@ interface Props {
   title: string;
   description?: string;
   activePage: 'home' | 'profile' | 'practice' | 'contact';
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, activePage } = Astro.props;
+const { title, description, activePage, structuredData } = Astro.props;
 const withBase = createBasePath(import.meta.env.BASE_URL);
 
 const siteUrl = Astro.site ?? new URL('https://connorbowlan.github.io');
@@ -20,6 +21,43 @@ const pageDescription =
   description ??
   'Allison Hart provides experienced, practical legal representation in Oklahoma City, including family law, child custody, child support, DUI defense, wills, trusts, and civil matters.';
 const socialImageUrl = new URL(withBase('/images/skyline.jpg'), siteUrl).toString();
+const organizationUrl = new URL(withBase('/'), siteUrl).toString();
+const attorneySchema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Attorney',
+  name: 'Allison Hart, P.C.',
+  url: organizationUrl,
+  image: socialImageUrl,
+  telephone: '+1-405-340-6340',
+  email: 'allison@hartlawfirm.org',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '701 NW 13th Street',
+    addressLocality: 'Oklahoma City',
+    addressRegion: 'OK',
+    postalCode: '73103',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    'Oklahoma City',
+    'Edmond',
+    'Moore',
+    'Norman',
+    'Guthrie',
+    'Stillwater',
+    'Shawnee',
+  ],
+  sameAs: [
+    'https://www.expertise.com/ok/oklahoma-city/child-support-lawyers',
+    'https://www.msn.com/en-us/news/other/top-lawyers-setting-new-precedents-in-the-legal-industry/ar-AA21VHjP',
+  ],
+};
+const pageStructuredData = Array.isArray(structuredData)
+  ? structuredData
+  : structuredData
+    ? [structuredData]
+    : [];
+const structuredDataItems = [attorneySchema, ...pageStructuredData];
 ---
 
 <!doctype html>
@@ -42,6 +80,7 @@ const socialImageUrl = new URL(withBase('/images/skyline.jpg'), siteUrl).toStrin
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
@@ -67,6 +106,12 @@ const socialImageUrl = new URL(withBase('/images/skyline.jpg'), siteUrl).toStrin
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="msapplication-TileImage" content={withBase('/images/favicons/mstile-144x144.png')} />
     <meta name="msapplication-config" content={withBase('/images/favicons/browserconfig.xml')} />
+    <link rel="preload" as="image" href={withBase('/images/skyline.jpg')} fetchpriority="high" />
+    {
+      structuredDataItems.map((item) => (
+        <script type="application/ld+json" set:html={JSON.stringify(item)} />
+      ))
+    }
 
     <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script is:inline>

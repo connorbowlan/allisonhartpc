@@ -1,18 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { createBasePath } from '../lib/paths';
+
+const withBase = createBasePath(import.meta.env.BASE_URL);
 ---
 
 <BaseLayout
   title="Practice"
-  description="Review the legal services provided by Allison Hart, P.C., including family law, child custody, child support, criminal defense, estate planning, and consumer matters."
+  description="Review Oklahoma City legal services from Allison Hart, P.C., including family law, child custody, child support, criminal defense, estate planning, and consumer matters."
   activePage="practice"
 >
   <div class="content">
     <h1 class="heading-with-icon"><i class="fa fa-info-circle heading-icon" aria-hidden="true"></i><span>Practice</span></h1>
-    <p>Allison established her career in law 10 years ago in Edmond, Oklahoma. Today, she works in Oklahoma City near downtown. Allison started the firm with the idea to practice family law and provide the best service to her clients without high cost and sometimes even for no cost at all. As she acquired more knowledge of different legal fields, the firm expanded to where it efficiently cares for all the people of Oklahoma regardless of type of case.</p>
-    <p>After the firm had become more established, connections between Oklahoma's attorneys and professionals from all areas built the strength and power this firm holds. Allison Hart has practiced law in Edmond, Oklahoma City, Moore, Norman, El Reno, Guthrie, Stillwater, Shawnee, and other smaller towns and cities in the state. The amount of ground covered by this firm proved only how versatile and able the firm actually is. Very few firms have the ability to manage such a workload so efficiently.</p>
+    <p>Allison Hart, P.C. provides legal representation in Oklahoma City with a focus on family law and practical case strategy. As experience broadened, the firm expanded to support clients across multiple legal areas while keeping client communication clear and responsive.</p>
+    <p>Allison Hart has represented clients in Oklahoma City, Edmond, Moore, Norman, El Reno, Guthrie, Stillwater, Shawnee, and other communities across Oklahoma. To review attorney background and credentials, visit the <a href={withBase('/profile')}>Profile</a> page.</p>
     <p><strong>If you are involved in or interested in pursuing a legal case, please review the list of areas she currently practices below:</strong></p>
-    <br />
     <h1 class="heading-with-icon"><i class="fa fa-gavel heading-icon" aria-hidden="true"></i><span>Practice Areas</span></h1>
   </div>
   <div class="columns">

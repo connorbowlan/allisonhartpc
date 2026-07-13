@@ -49,3 +49,18 @@ The workflow builds from the repository root and deploys `dist/`.
 - Primary nav includes `Home`, `Profile`, `Practice`, `Contact`.
 - `Pay Online` is present in nav as a distinct utility action.
 - Footer is intentionally minimal and only contains an immediate contact row.
+
+## SEO implementation
+
+- Shared metadata in `BaseLayout` includes canonical URLs, Open Graph, Twitter cards, and sitewide Attorney structured data.
+- Home page includes a visible FAQ section and `FAQPage` JSON-LD.
+- Contact page includes `ContactPage` structured data.
+- Content and internal linking are optimized for local intent (`Oklahoma City` + surrounding areas) across Home, Practice, Profile, and Contact.
+- `robots.txt` points to the generated sitemap index.
+
+## Google Search Console checklist
+
+1. Add and verify the property for `https://connorbowlan.github.io/allisonhartpc/`.
+2. Submit `https://connorbowlan.github.io/allisonhartpc/sitemap-index.xml`.
+3. Use URL Inspection to request indexing for `/`, `/practice/`, `/profile/`, and `/contact/`.
+4. Review Performance and Coverage reports after indexing to refine titles/descriptions over time.

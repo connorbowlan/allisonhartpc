@@ -3,12 +3,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { createBasePath } from '../lib/paths';
 
 const withBase = createBasePath(import.meta.env.BASE_URL);
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What legal matters does Allison Hart, P.C. handle in Oklahoma City?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Allison Hart, P.C. handles family law matters such as divorce, child custody, child support, paternity, and adoption, along with criminal defense, estate planning, and related civil matters.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I contact Allison Hart, P.C. for a consultation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You can call (405) 340-6340 or email allison@hartlawfirm.org. You can also use the Contact page form to prepare a pre-filled email draft.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which Oklahoma areas are served?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The firm serves Oklahoma City and surrounding communities including Edmond, Moore, Norman, Guthrie, Stillwater, and Shawnee.',
+      },
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title="Home"
-  description="Allison Hart, P.C. is an Oklahoma City law firm providing practical representation in family law, child custody, child support, criminal defense, and related civil matters."
+  description="Allison Hart, P.C. is an Oklahoma City attorney helping with family law, child custody, child support, criminal defense, estate planning, and related legal matters across central Oklahoma."
   activePage="home"
+  structuredData={faqSchema}
 >
   <div class="content">
     <div class="featured-press">
@@ -28,11 +59,11 @@ const withBase = createBasePath(import.meta.env.BASE_URL);
   <div class="columns">
     <div class="column-1">
       <h1 class="heading-with-icon"><i class="fa fa-gavel heading-icon" aria-hidden="true"></i><span>Boutique Law</span></h1>
-      <p>Allison Hart is a unique attorney providing high-quality, efficient legal representation in all legal matters. The focus is to find creative solutions to the challenging problems presented by complex cases, including issues related to Divorce, Child Custody, Child Support Guidelines, Modifications, Victim’s Protective Orders, Foreclosures, DUI, Wills and Trusts, Personal injury, Expungement and other Criminal matters. We believe it is vital to provide convenience to our clients and reduce the difficulty of the legal process through clear communication.</p>
+      <p>Allison Hart is an Oklahoma City attorney providing high-quality, efficient legal representation in complex cases, including divorce, child custody, child support, modifications, victim’s protective orders, foreclosures, DUI, wills and trusts, personal injury, expungement, and other criminal matters. We focus on practical legal strategy and clear communication to reduce stress for clients throughout central Oklahoma.</p>
     </div>
     <div class="column-2">
       <h1 class="heading-with-icon"><i class="fa fa-balance-scale heading-icon" aria-hidden="true"></i><span>A Winning Formula</span></h1>
-      <p>The approach to each case is governed by the client's circumstances and needs. Some clients are best served by aggressive litigation; other clients benefit from negotiations based on thorough preparation and in-depth knowledge of their individual situations. Whatever approach is needed, every case is prepared in anticipation of a trial so that if necessary, we are ready for any issues to arise. This go-to team of experts include CPAs; psychiatrists; real estate appraisers; business valuation experts; private investigators; computer forensic experts; and more.</p>
+      <p>The approach to each case is governed by the client's circumstances and needs. Some clients are best served by aggressive litigation; others benefit from negotiations based on thorough preparation and in-depth knowledge of their individual situations. Every case is prepared in anticipation of trial when needed. For background and credentials, visit the <a href={withBase('/profile')}>attorney profile</a>.</p>
     </div>
     <div class="column-3">
       <h1 class="heading-with-icon"><i class="fa fa-phone heading-icon" aria-hidden="true"></i><span>Immediate Help</span></h1>
@@ -41,9 +72,27 @@ const withBase = createBasePath(import.meta.env.BASE_URL);
         <li><i class="fa fa-phone inline-icon" aria-hidden="true"></i> Phone: <a href="tel:4053406340">(405) 340-6340</a></li>
         <li><i class="fa fa-envelope inline-icon" aria-hidden="true"></i> Email: <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a></li>
       </ul>
-      <p>She serves the greater Oklahoma City area, including communities such as Edmond, Oklahoma City, Moore, Norman, El Reno, Guthrie, Stillwater and Shawnee. For a full list of services and areas of practice, visit the <a href={withBase('/practice')}>practice</a> page.</p>
+      <p>She serves the greater Oklahoma City area, including Edmond, Moore, Norman, El Reno, Guthrie, Stillwater, and Shawnee. For a full list of services, visit <a href={withBase('/practice')}>Practice Areas</a>, or go directly to <a href={withBase('/contact')}>Contact</a> to get started.</p>
     </div>
   </div>
+
+  <section class="content faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>What legal matters does Allison Hart, P.C. handle?</summary>
+        <p>Representation includes family law matters such as divorce, child custody, child support, paternity, and adoption, along with criminal defense, estate planning, and selected civil matters.</p>
+      </details>
+      <details>
+        <summary>How do I start a consultation?</summary>
+        <p>Call <a href="tel:4053406340">(405) 340-6340</a> or email <a href="mailto:allison@hartlawfirm.org">allison@hartlawfirm.org</a>. You can also use the form on the <a href={withBase('/contact')}>Contact page</a>.</p>
+      </details>
+      <details>
+        <summary>Do you serve clients outside Oklahoma City?</summary>
+        <p>Yes. The firm serves Oklahoma City and nearby communities including Edmond, Moore, Norman, Guthrie, Stillwater, and Shawnee.</p>
+      </details>
+    </div>
+  </section>
 
   <div class="content">
     <blockquote>

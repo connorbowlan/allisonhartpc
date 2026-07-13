@@ -357,6 +357,46 @@ blockquote p {
   font-style: italic;
 }
 
+.faq-section {
+  margin-top: var(--space-8);
+}
+
+.faq-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+}
+
+.faq-list summary {
+  color: var(--color-heading-alt);
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  color: var(--color-link);
+  content: '+';
+  float: right;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.faq-list details[open] summary::after {
+  content: '\2212';
+}
+
+.faq-list details p {
+  margin: var(--space-3) 0 0 0;
+}
+
 .award-wrap {
   display: flex;
   justify-content: flex-end;

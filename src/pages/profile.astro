@@ -7,15 +7,15 @@ const withBase = createBasePath(import.meta.env.BASE_URL);
 
 <BaseLayout
   title="Profile"
-  description="Read Allison Hart's attorney profile, including legal experience, bar memberships, education, and honors across Oklahoma family and civil law matters."
+  description="Read Allison Hart's Oklahoma City attorney profile, including legal experience, bar memberships, education, and honors in family, criminal, and civil law matters."
   activePage="profile"
 >
   <div class="content">
     <div class="profile-intro">
-      <img class="profile-photo" src={withBase('/images/profile.png')} alt="Picture of Allison Hart." />
+      <img class="profile-photo" src={withBase('/images/profile.png')} alt="Portrait of Oklahoma City attorney Allison Hart." width="175" height="260" loading="eager" decoding="async" />
       <div class="profile-intro-copy">
         <h1>Profile</h1>
-        <p>Allison Hart has practiced across Oklahoma for decades, with deep experience in family law, criminal matters, and complex civil issues. Her approach combines practical strategy, clear communication, and strong courtroom preparation.</p>
+        <p>Allison Hart has practiced across Oklahoma for decades, with deep experience in family law, criminal matters, and complex civil issues. Her approach combines practical strategy, clear communication, and strong courtroom preparation. For services, see <a href={withBase('/practice')}>Practice Areas</a>, or visit <a href={withBase('/contact')}>Contact</a> to discuss your case.</p>
       </div>
     </div>
 
