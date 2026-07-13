@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { createBasePath } from '../lib/paths';
 import '../styles/global.css';
 
 interface Props {
@@ -9,8 +10,7 @@ interface Props {
 }
 
 const { title, activePage } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
+const withBase = createBasePath(import.meta.env.BASE_URL);
 
 const pageTitle = `${title} . Allison Hart . Oklahoma Attorney`;
 const description =

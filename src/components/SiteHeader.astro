@@ -1,11 +1,12 @@
 ---
+import { createBasePath } from '../lib/paths';
+
 interface Props {
   activePage: 'home' | 'profile' | 'practice' | 'contact';
 }
 
 const { activePage } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${baseUrl.replace(/\/?$/, '/')}${path.replace(/^\/+/, '')}`;
+const withBase = createBasePath(import.meta.env.BASE_URL);
 ---
 
 <header>
