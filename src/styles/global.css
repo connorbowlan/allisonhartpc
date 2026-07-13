@@ -207,6 +207,27 @@ nav ul li a:hover {
   margin: 0 5% 15px 15px;
 }
 
+.award-link {
+  border: 0;
+  display: block;
+}
+
+.award-fallback {
+  align-items: center;
+  background: #fefefe;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  display: flex;
+  font: 0.9em Arial;
+  height: 160px;
+  justify-content: center;
+  line-height: 1.4;
+  padding: 12px;
+  text-align: center;
+  width: 200px;
+}
+
 .office-address {
   color: #9b1d17;
   font: 1.4em Helvetica Neue, Arial;
