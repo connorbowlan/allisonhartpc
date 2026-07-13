@@ -1,0 +1,325 @@
+/* Global */
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/* Body */
+body {
+	background: #F5F5F5;
+}
+
+/* Text and Links */
+h1 {
+	color: #524D85;
+	font: 1.7em Helvetica Neue, Arial;
+	margin: 0 0 15px 0;
+}
+
+h2 {
+	color: #9B1D17;
+	font: 1.4em Helvetica Neue, Arial;
+	margin: 0 0 15px 0;
+}
+
+i.h1 {
+	float: left;
+	margin-right: 10px;
+}
+
+blockquote {
+	background: #FEFEFE;
+	border-radius: 5px;
+	box-shadow: 0 2px 0 #CCC;
+	margin-bottom: 15px;
+	padding: 2em 2em 0 2em;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+	color: #CCC;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+
+blockquote:after {
+	color: #CCC;
+	font-size: 4em;
+	margin-left: 0.25em;
+	vertical-align: -0.4em;
+	content: close-quote;
+}
+
+blockquote p {
+	display: inline;
+	font: italic 1.2em Georgia;
+}
+
+p {
+	color: #000;
+	font: .9em Arial;
+	line-height: 1.4em;
+	margin-bottom: 15px;
+}
+
+p.error {
+	background: #DEDEDE;
+	border: 1px solid #990000;
+	border-radius: 5px;
+	color: #000;
+	display: block;
+	margin-top: 30px;
+	padding: 10px;
+}
+
+p.success {
+	background: #DEDEDE;
+	border: 1px solid #14AB52;
+	border-radius: 5px;
+	color: #000;
+	display: block;
+	margin-top: 30px;
+	padding: 10px;
+}
+
+a {
+	color: #488BAE;
+}
+
+/* Forms */
+input[type = "text"], input[type = "email"], input[type = "tel"], textarea {
+	background: #FFF;
+	border: 1px solid #999;
+	color: #333;
+	font: .8em Helvetica Neue, Arial;
+	margin: 0 0 10px 0;
+	padding: 4.7%;
+	width: 90%;
+}
+
+input[type = "submit"] {
+	background: #488BAE;
+	border: none;
+	border-radius: 5px;
+	color: #FFF;
+	font: 1em Helvetica Neue, Arial;
+	margin: 0 0 10px 0;
+	padding: 4.7%;
+	width: 90%;
+}
+
+textarea {
+	height: 180px;
+}
+
+input[type = "radio"] {
+	margin-right: 5px;
+}
+
+/* Lists */
+ul {
+	margin-bottom: 15px;
+}
+
+ul li {
+	color: #000;
+	font: .9em arial;
+	display: block;
+	margin: 0 0 15px 0;
+}
+
+/* Top */
+#top {
+	background: #FFF;
+	height: 50px;
+	left: 0;
+	opacity: .98;
+	padding: 35px 0 0 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#top-center {
+	margin: auto;
+	width: 90%;
+}
+
+/* Social Links */
+.social {
+	float: left;
+	width: 10%;
+}
+
+.social a {
+	font-size: 1em;
+}
+
+/* Nav */
+nav {
+	float: left;
+	width: 90%;
+}
+
+nav ul {
+	float: right;
+}
+
+nav ul li {
+	float: left;
+	list-style: none;
+}
+
+nav ul li a {
+	color: #999;
+	font: 1em Georgia;
+	margin-right: 25px;
+}
+
+nav ul li a#active {
+	color: #000;
+	font-weight: bold;
+}
+
+nav ul li a:hover {
+	color: #000;
+}
+
+/* Skyline and Logo */
+#skyline {
+	background: url('../images/skyline.jpg') fixed;
+	background-size: cover; /* General */
+	-webkit-background-size: cover; /* Safari and Chrome */
+	-moz-background-size: cover; /* Mozilla */
+	-o-background-size: cover; /* Opera */
+	
+	height: 20em;
+	margin-top: 85px;
+}
+
+#skyline a {
+	background: #000;
+	display: block;
+	color: #FFF;
+	font: 5em Times New Roman;
+	opacity: .5;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+#skyline span.tagline {
+	background: #000;
+	color: #FFF;
+	display: block;
+	font: 2em Times New Roman;
+	opacity: .5;
+	padding-bottom: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+/* Content Columns */
+.columns {
+	margin: 25px auto;
+	width: 90%;
+}
+
+.new {
+	border-top: 3px solid #000;
+	padding-top: 25px;
+}
+
+.columns:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+.column-1, .column-2, .column-3 {
+	float: left;
+	position: relative;
+	width: 30%;
+}
+
+.column-1 {
+	padding-right: 5%;
+}
+
+.column-3 {
+	padding-left: 5%;
+}
+
+/* Content */
+.content {
+	margin: 25px auto;
+	width: 90%;
+}
+
+.covid {
+	background: #eaeaea;
+	border: 1px solid #999;
+	margin: 25px auto;
+	padding: 5%;
+	width: 80%;
+}
+
+/* Footer */
+footer {
+	background: #333;
+	margin-top: 50px;
+	padding: 7px 0 1px 0;
+}
+
+footer p {
+	color: #999;
+}
+
+footer .column-2 {
+	text-align: center;
+}
+
+footer .column-3 {
+	text-align: right;
+}
+
+@media only screen
+and (max-device-width: 480px) {
+
+		.social {
+			display: none;
+		}
+		
+		nav {
+			float: none;
+			margin: auto;
+			width: 100%;
+		}
+		
+		nav ul li a {
+			margin: 0 5px 0 5px;
+		}
+
+		#skyline {
+			background-size: 75% 20%;
+		}
+		
+		
+		.column-1, .column-2, .column-3 {
+			float: none;
+			margin: 0 0 25px 0;
+			padding: 0;
+			width: 100%;
+		}
+		
+		footer .column-1, footer .column-2, footer .column-3 {
+			text-align: center;
+		}
+		
+}

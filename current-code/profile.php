@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Profile . Allison Hart . Oklahoma Attorney</title>
+			<link rel="stylesheet" href="static/styles.css" type="text/css">
+			<?php include "static/analytics.php" ?>
+			<?php include "static/meta.php" ?>
+	</head>
+		<body>
+			<header>
+				<div id="top">
+					<div id="top-center">
+						<div class="social">
+						<br>
+						</div>
+							<nav>
+							<ul>
+								<li><a href="index.php">Home</a></li>
+								<li><a id="active" href="profile.php">Profile</a></li>
+								<li><a href="practice.php">Practice</a></li>
+								<li><a href="contact.php">Contact</a></li>
+							</ul>
+							</nav>
+					</div>
+				</div>
+					<div id="skyline">
+						<a href="index.php">Allison Hart</a>
+						<span class="tagline">Attorney at Law</span>
+					</div>
+			</header>
+				<div class="content">
+				<img style="float: left; margin: 0 25px 25px 0;" src="images/profile.png" alt="Picture of Allison Hart.">
+				<h1>Allison Hart, P.C.</h1>
+					<div class="columns">
+						<div class="column-1">
+						<h2>Professional Memberships</h2>
+						<ul>
+							<li>Oklahoma Bar Association</li>
+							<li>Oklahoma County Bar Association</li>
+							<li>Oklahoma Criminal Defense Lawyers Association</li>
+							<li>Guinnsburg Inn of Courts</li>
+						</ul>
+						</div>
+							<div class="column-2">
+							<h2>Bar Memberships</h2>
+							<ul>
+								<li>Massachusetts Bar</li>
+								<li>Texas Bar</li>
+								<li>Oklahoma Bar</li>
+							</ul>
+							</div>
+					</div>
+				<h2>Education</h2>
+				<ul>
+					<li>University of Oklahoma  ~  B.S. in Psychology   1975-1979</li>       
+					<li>University of Oklahoma Law School 1984-1985</li>                                    
+					<li>Suffolk University Law School, Boston 1985-1987</li>
+				</ul>
+				<h2>Honors</h2>
+				<ul>
+					<li>Internship: Judge William Ginsberg, District Court, Concord </li>
+					<li>Editor-In-Chief of <i>The Advocate</i>, A Suffolk University Law School Publication</li>
+					<li>Co-Author of “The Alcohol-Impaired Attorney” Spring Edition of the Advocate, 1987</li>
+					<li>Ginsburg Inn of Courts</li>
+					<li>Grandparental Visitation in Oklahoma: An Overview, <i>Oklahoma Bar Journal</i> 2009</li>
+				</ul>
+				<h2>Legal Experience</h2>
+				<ul>
+					<li><strong>REPRESENTATIVE BARBARA GRAY 1985-1987</strong>
+					<br>
+					<i>State House Boston, Massachusetts</i>
+					<br>
+					As a liaison between Representative Gray and numerous  activist groups, I drafted legislation reflecting community concerns, attended meetings on Ms. Gray’s behalf and worked with constituents and other Representatives on a daily basis.</li>
+					<li><strong>COMMITTEE ON THE REFORMATION OF FAMILY  LAW 1986-1987</strong>
+					<br>
+					<i>Boston, Massachusetts</i>
+					<br>
+					Interviewed judges and researched the laws of neighboring states to present a reformation of the current Divorce laws. Once the Committees decisions were made I drafted and lobbied for the Divorce Guidelines passed in 1988.</li>
+					<li><strong>COHEN & GAFFIN 1987-1989</strong>
+					<br>
+					<i>118 Worcester Road, Framingham, Massachusetts</i>
+					<br>
+					Associate in a eight-attorney general contract firm. Although I participated in Criminal, Personal Injury, and Real Estate cases: my main task was to prove fraudulent a Polish Immigrant’s hand-written will leaving $7.5 Million to the United States Government.</li>
+					<li><strong>LAW FIRM OF ALLISON A. HART 1990-1991</strong>
+					<br>
+					<i>222 Park Lane, San Antonio, Texas</i>
+					<br>I developed a collections firm for Physicians in San Antonio and surrounding areas. In many instances a settlement of the case occurred however a few required trials to resolve.</li>
+					<li><strong>LAW FIRM OF ALLISON A. HART 1999 to 2005</strong>
+					<br>
+					<i>3409 Wynn Drive, Edmond, Oklahoma</i>
+					<br>
+					Focusing mainly on family law, I prepared for trial and tried cases when a settlement could not be reached. Cases include divorce, child custody modification, guardianship and enforcement of Child Support Guidelines.</li>
+					<li><strong>PRITCHETT & SNYDER 2005-2007</strong>
+					<br>
+					<i>1601 NW 19th Edmond, Oklahoma</i>
+					<br>
+					The majority of this firm’s practice was workman’s compensation. I was brought in to handle other legal aspects in needs of their clients.</li>
+					<li><strong>LAW FIRM OF ALLISON HART, P.C. July 2007 to present</strong>
+					<br>
+					<i>701 NW 13th Street, Oklahoma City, Oklahoma</i>
+				</ul>
+				</div>
+						<footer>
+						<?php include "static/footer.php" ?>
+						</footer>
+		</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Practice . Allison Hart . Oklahoma Attorney</title>
+			<meta charset="utf-8">
+			<link rel="stylesheet" href="static/styles.css" type="text/css">
+			<?php include "static/analytics.php" ?>
+			<?php include "static/meta.php" ?>
+	</head>
+		<body>
+			<header>
+				<div id="top">
+					<div id="top-center">
+						<div class="social">
+						<br>
+						</div>
+							<nav>
+							<ul>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="profile.php">Profile</a></li>
+								<li><a id="active" href="practice.php">Practice</a></li>
+								<li><a href="contact.php">Contact</a></li>
+							</ul>
+							</nav>
+					</div>
+				</div>
+					<div id="skyline">
+						<a href="index.php">Allison Hart</a>
+						<span class="tagline">Attorney at Law</span>
+					</div>
+			</header>
+				<div class="content">
+				<i class="fa fa-info fa-2x h1"></i><h1>About the Practice</h1>
+				<p>Allison established her career in law 10 years ago in Edmond, Oklahoma. Today, she works in Oklahoma City near downtown. Allison started the firm with the idea to practice family law and provide the best service to her clients without high cost and sometimes even for no cost at all. As she acquired more knowledge of different legal fields, the firm expanded to where it efficiently cares for all the people of Oklahoma regardless of type of case.</p>
+				<p>After the firm had become more established, connections between Oklahoma’s attorneys and professionals from all areas built the strength and power this firm holds. Allison Hart has practiced law in Edmond, Oklahoma City, Moore, Norman, El Reno, Guthrie, Stillwater, Shawnee, and other smaller towns and cities in the state. The amount of ground covered by this firm proved only how versatile and able the firm actually is. Very few firms have the ability to manage such a workload so efficiently.</p>
+				<p><strong>If you are involved in or interested in pursuing a legal case, please review the list of areas she currently practices below:</strong></p>
+				<br>
+				<i class="fa fa-gavel fa-2x h1"></i><h1>Areas of Practice</h1>
+				</div>
+					<div class="columns">
+						<div class="column-1">
+						<h2>Family Law</h2>
+						<ul>
+							<li>Divorce</li>
+							<li>Paternity</li>
+							<li>Child Custody</li>
+							<li>Visitation</li>
+							<li>Child Support Guidelines</li>
+							<li>Grandparents Rights</li>
+						</ul>
+						<h2>Adoption</h2>
+						<ul>
+							<li>Step-parent Adoption</li>
+							<li>Termination of Parental Rights</li>
+						</ul>
+						</div>
+							<div class="column-2">
+							<h2>Criminal</h2>
+							<ul>
+								<li>Driving Under the Influence</li>
+								<li>Driving While Intoxicated</li>
+								<li>Public Intoxication</li>
+								<li>Possession</li>
+								<li>Probation Revocatons</li>
+							</ul>
+							<h2>Consumer Protection</h2>
+							<ul>
+								<li>Collections</li>
+								<li>Student Loans</li>
+							</ul>
+							</div>
+								<div class="column-3">
+								<h2>Estate Planning</h2>
+								<ul>
+									<li>Wills</li>
+									<li>Trusts</li>
+									<li>Power of Attorney</li>
+									<li>Living Wills</li>
+								</ul>
+								<h2>Others/Misc.</h2>
+								<ul>
+									<li>Personal Injury</li>
+									<li>Wrongful Termination</li>
+									<li>Foreclosures</li>
+								</ul>
+								</div>
+					</div>
+						<footer>
+						<?php include "static/footer.php" ?>
+						</footer>
+		</body>
+</html>
