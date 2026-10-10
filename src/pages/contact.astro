@@ -3,12 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { createBasePath } from '../lib/paths';
 
 const withBase = createBasePath(import.meta.env.BASE_URL);
-const siteUrl = Astro.site ?? new URL('https://connorbowlan.github.io');
 const contactPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contact Allison Hart, P.C.',
-  url: new URL(withBase('/contact'), siteUrl).toString(),
   about: {
     '@type': 'Attorney',
     name: 'Allison Hart, P.C.',

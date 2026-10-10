@@ -4,8 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://connorbowlan.github.io',
-  base: '/allisonhartpc',
+  site: 'https://allisonhartpc.com',
   server: {
     port: 3000,
   },

@@ -2,6 +2,7 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { createBasePath } from '../lib/paths';
+import { resolveSiteUrl } from '../lib/site';
 import '../styles/global.css';
 
 interface Props {
@@ -14,7 +15,7 @@ interface Props {
 const { title, description, activePage, structuredData } = Astro.props;
 const withBase = createBasePath(import.meta.env.BASE_URL);
 
-const siteUrl = Astro.site ?? new URL('https://connorbowlan.github.io');
+const siteUrl = resolveSiteUrl(Astro.site);
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const pageTitle = `${title} | Allison Hart, P.C. | Oklahoma City Attorney`;
 const pageDescription =

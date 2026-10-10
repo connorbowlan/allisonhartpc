@@ -60,7 +60,7 @@ The workflow builds from the repository root and deploys `dist/`.
 
 ## Google Search Console checklist
 
-1. Add and verify the property for `https://connorbowlan.github.io/allisonhartpc/`.
-2. Submit `https://connorbowlan.github.io/allisonhartpc/sitemap-index.xml`.
+1. Add and verify the property for `https://allisonhartpc.com/`.
+2. Submit `https://allisonhartpc.com/sitemap-index.xml`.
 3. Use URL Inspection to request indexing for `/`, `/practice/`, `/profile/`, and `/contact/`.
 4. Review Performance and Coverage reports after indexing to refine titles/descriptions over time.
